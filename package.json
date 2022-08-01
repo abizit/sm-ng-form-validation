@@ -1,6 +1,16 @@
 {
   "name": "sm-ng-form-validation",
-  "version": "0.0.1",
+  "version": "1.0.3",  
+  "description": "This is utility library to show form errors in Angular Forms.",
+  "author": {
+    "name": "StudioMatrix",
+    "email": "contact@studiomatrix.com.np",
+    "url": "https://studiomatrix.com.np/"
+  },
+  "repository": {
+    "type": "git",
+    "url":  "https://github.com/abizit/sm-ng-form-validation"
+  },
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
