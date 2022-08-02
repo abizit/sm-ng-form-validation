@@ -1,3 +1,4 @@
 export interface SMFormValidationConfig {
-  errorColor: string;
+  errorColor?: string;
+  defaultErrors?: object;
 }
