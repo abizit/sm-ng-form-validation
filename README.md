@@ -94,9 +94,9 @@ import {SmFormValidationModule} from 'sm-ng-form-validation'
 export class AppModule { }
 ```
 
-However, to change other styles, the  `error` and `error-message` classes need to be overwritten.
-1. `error`  -   This class is the styling for the container 
-2. `error-message` - This class is the styling for the error message.
+However, to change other styles, the  `sm-ng-error` and `sm-ng-error-message` classes need to be overwritten.
+1. `sm-ng-error`  -   This class is the styling for the container 
+2. `sm-ng-error-message` - This class is the styling for the error message.
 
 For the error messages, the  default messages are: 
 
