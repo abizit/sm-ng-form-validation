@@ -8,6 +8,7 @@ export const defaultErrors = {
   expiry: () => 'Expiry format is invalid',
   passwordMatch: () => 'Password should match!',
   customRequired: () => 'This field is required',
+  email:() =>'Invalid email format'
 };
 export const FORM_ERRORS = new InjectionToken('FORM_ERRORS', {
   providedIn: 'root',
