@@ -43,7 +43,7 @@ import {SmFormValidationModule} from 'sm-ng-form-validation'
     imports: [
         BrowserModule,
         ReactiveFormsModule,
-        SmFormValidationModule
+        SmFormValidationModule.forRoot()
     ],
   providers: [],
   bootstrap: [AppComponent]
