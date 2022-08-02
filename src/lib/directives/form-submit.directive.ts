@@ -10,7 +10,7 @@ import {fromEvent} from 'rxjs';
 export class FormSubmitDirective {
   submit$ = fromEvent(this.element, 'submit').pipe(
     tap(_ => {
-      if (this.element.classList.contains('submitted') === false) {
+      if (!this.element.classList.contains('submitted')) {
         this.element.classList.add('submitted');
       }
     }),
