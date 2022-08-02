@@ -31,6 +31,7 @@ export class SmFormValidationModule {
     }
     return {
       ngModule: SmFormValidationModule,
+      // conditionally setting the error messages in runtime
       providers:[{
         provide: FORM_ERRORS,
         useFactory:() => ({...defaultErrors, ...(config && hasErrorMessages(config.defaultErrors) && config.defaultErrors)})
