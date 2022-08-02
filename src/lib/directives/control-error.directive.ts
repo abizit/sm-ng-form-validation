@@ -93,7 +93,7 @@ export class ControlErrorDirective implements OnInit, OnDestroy{
 
 
   private setError(text: string): void {
-    const showError = this.form.host.nativeElement.classList.contains('submitted') || this.partialCheck;
+    const showError = this.form.host.nativeElement.classList.contains('sm-ng-submitted') || this.partialCheck;
     this.setErrorBorder(text, showError);
     if(!this.ref) {
       const factory = this.resolver.resolveComponentFactory(ControlErrorComponent);
@@ -107,9 +107,9 @@ export class ControlErrorDirective implements OnInit, OnDestroy{
 
   private setErrorBorder(state: string | null, showError: boolean): void {
    if(state && showError) {
-     this.container.element.nativeElement.classList.add('error');
+     this.container.element.nativeElement.classList.add('sm-ng-error');
    } else {
-     this.container.element.nativeElement.classList.remove('error');
+     this.container.element.nativeElement.classList.remove('sm-ng-error');
    }
   }
 

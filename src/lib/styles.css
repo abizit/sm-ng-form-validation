@@ -2,16 +2,16 @@
   --sm-validation-error-color: #d10a11;
 }
 
-.error label{
+.sm-ng-error label{
   color: var(--sm-validation-error-color);
 }
 
-.error input,
-.error  textarea {
+.sm-ng-error input,
+.sm-ng-error  textarea {
   border: 1px solid var( --sm-validation-error-color);
 }
 
-.error span.error-message {
+.sm-ng-error span.sm-ng-error-message {
   transition: 0.3s all ease-in-out;
   display: block;
   text-align: center;

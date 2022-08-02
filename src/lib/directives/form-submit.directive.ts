@@ -10,8 +10,8 @@ import {fromEvent} from 'rxjs';
 export class FormSubmitDirective {
   submit$ = fromEvent(this.element, 'submit').pipe(
     tap(_ => {
-      if (this.element.classList.contains('submitted') === false) {
-        this.element.classList.add('submitted');
+      if (this.element.classList.contains('sm-ng-submitted') === false) {
+        this.element.classList.add('sm-ng-submitted');
       }
     }),
     shareReplay(1)
