@@ -1,5 +1,4 @@
 import {
-  ComponentFactoryResolver,
   ComponentRef,
   Directive,
   Host,
@@ -39,7 +38,6 @@ export class ControlErrorDirective implements OnInit, OnDestroy{
               @Optional() @Host() private form: FormSubmitDirective,
               // @ts-ignore
               @Inject(FORM_ERRORS) private errors,
-              private resolver: ComponentFactoryResolver,
               private vcr: ViewContainerRef,
               @Optional() controlErrorContainer: ControlErrorContainerDirective) {
     this.submit$ = this.form ? this.form.submit$ : EMPTY;
@@ -93,11 +91,10 @@ export class ControlErrorDirective implements OnInit, OnDestroy{
 
 
   private setError(text: string): void {
-    const showError = this.form.host.nativeElement.classList.contains('submitted') || this.partialCheck;
+    const showError = this.form.host.nativeElement.classList.contains('sm-ng-submitted') || this.partialCheck;
     this.setErrorBorder(text, showError);
     if(!this.ref) {
-      const factory = this.resolver.resolveComponentFactory(ControlErrorComponent);
-      this.ref = this.vcr.createComponent(factory);
+      this.ref = this.vcr.createComponent(ControlErrorComponent);
       const element = this.ref.location.nativeElement as HTMLElement;
       element.style.width = '100%';
     }
@@ -107,9 +104,9 @@ export class ControlErrorDirective implements OnInit, OnDestroy{
 
   private setErrorBorder(state: string | null, showError: boolean): void {
    if(state && showError) {
-     this.container.element.nativeElement.classList.add('error');
+     this.container.element.nativeElement.classList.add('sm-ng-error');
    } else {
-     this.container.element.nativeElement.classList.remove('error');
+     this.container.element.nativeElement.classList.remove('sm-ng-error');
    }
   }
 
