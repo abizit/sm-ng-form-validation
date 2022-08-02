@@ -8,4 +8,6 @@ export const defaultErrors = {
   email: () => 'Please enter a valid email',
   pattern: () => 'Invalid input'
 };
+
+// creating injection token to inject the form errors in runtime
 export const FORM_ERRORS = new InjectionToken('FORM_ERRORS');
