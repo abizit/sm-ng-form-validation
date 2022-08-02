@@ -1,6 +1,6 @@
 {
   "name": "sm-ng-form-validation",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "This is utility library to show form errors in Angular Forms.",
   "keywords": [
     "angular",
