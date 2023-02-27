@@ -57,7 +57,7 @@ export class ControlErrorDirective implements OnInit, OnDestroy{
       const controlErrors = this.control?.errors || (this.checkParent ? this.parentControl?.errors : null);
       if (controlErrors) {
         let errorText;
-        const keys = Object.keys(this.customErrors);
+        const keys = this.customErrors ? Object.keys(this.customErrors) : [];
         if (keys.length > 0) {
           for (let i = 0; i <  keys.length; i++) {
             if (controlErrors.hasOwnProperty(keys[i])) {
@@ -70,7 +70,7 @@ export class ControlErrorDirective implements OnInit, OnDestroy{
         if (!errorText) {
           const firstKey = Object.keys(controlErrors)[0];
           const getError = this.errors[firstKey];
-          text = this.customErrors[firstKey] || (getError && getError(controlErrors[firstKey]) ); // if custom error  is provided it shows that error or else looks into the default errors
+          text = this.customErrors ? this.customErrors[firstKey] : (getError && getError(controlErrors[firstKey]));  // if custom error  is provided it shows that error or else looks into the default errors
         }
         this.setError(text);
       } else if (this.ref) {
